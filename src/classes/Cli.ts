@@ -171,10 +171,6 @@ class Cli {
         },
       ])
       .then((answers) => {
-        // TODO: Use the answers object to pass the required properties to the Truck constructor
-        // TODO: push the truck to the vehicles array
-        // TODO: set the selectedVehicleVin to the vin of the truck
-        // TODO: perform actions on the truck
         const truck = new Truck (
           Cli.generateVin(),
           answers.color,
@@ -183,8 +179,12 @@ class Cli {
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
-          answers.towingCapacity,
-      )
+          parseInt(answers.towingCapacity),
+          []
+      );
+      this.vehicles.push(truck);
+      this.selectedVehicleVin = truck.vin;
+      this.performActions();
         
       });
   }
