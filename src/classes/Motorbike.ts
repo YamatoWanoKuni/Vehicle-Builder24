@@ -1,4 +1,5 @@
 // Importing Vehicle and Wheel classes
+import Truck from './Truck.js';
 import Vehicle from './Vehicle.js';
 import Wheel from './Wheel.js';
 
@@ -38,8 +39,9 @@ class Motorbike extends Vehicle {
         this.wheels = wheels;
       }
     }
-  wheelie(): void {
+  wheelie (vehicle: Motorbike): void {
     console.log(`Motorbike ${this.make} ${this.model} is doing a wheelie!`)
+    
   }
   override printDetails(): void {
     // Call the printDetails method of the parent class, Vehicle
